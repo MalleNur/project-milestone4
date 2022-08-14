@@ -1,6 +1,6 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome USER_NAME,
+Welcome MalleNur,
 
 This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
 
@@ -26,8 +26,8 @@ In Gitpod you have superuser security privileges by default. Therefore you do no
 
 To log into the Heroku toolbelt CLI:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
+1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
+2. Scroll down to the _API Key_ and click _Reveal_
 3. Copy the key
 4. In Gitpod, from the terminal, run `heroku_config`
 5. Paste in your API key when asked
@@ -66,7 +66,7 @@ We continually tweak and adjust this template to help give you the best experien
 
 **February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank"  README.md file at the official repo for more options.
 
 ------
 
@@ -94,7 +94,7 @@ We want to tell you this so that we are being completely transparent about the d
 
 Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
 
-```
+```bash
 pkill uptime.sh
 rm .vscode/uptime.sh
 ```
@@ -103,6 +103,6 @@ rm .vscode/uptime.sh
 
 Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
 
----
+------
 
 Happy coding!
