@@ -31,7 +31,7 @@ body {
     background: black;
     color: white;
     min-width: 260px;
-    border: 1.5px solid rgb(56, 117, 107) !important;
+    border: 1.5px solid rgb(47, 101, 81) !important;
 }
 
 .btn-black {
@@ -53,14 +53,28 @@ body {
     color: #000 !important;
 }
 
-.text
+.text.green {
+    color: rgb(47, 101, 81) !important;
+}
 
 .border-black {
     border: 1px solid black !important;
 }
 
+.border-green {
+    border: 1px solid rgb(47, 101, 81) !important;
+}
+
 .bg-black {
     background: #000 !important;
+}
+
+.bg-green {
+    background-color: rgb(47, 101, 81);
+}
+
+.bg-warning-lg-purple {
+    background-color: rgba(47, 101, 81, 0.378);
 }
 
 .overlay {
