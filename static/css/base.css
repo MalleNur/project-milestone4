@@ -31,6 +31,7 @@ body {
     background: black;
     color: white;
     min-width: 260px;
+    border: 1.5px solid rgb(56, 117, 107) !important;
 }
 
 .btn-black {
