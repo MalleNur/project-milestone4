@@ -1,9 +1,39 @@
+# Data files 
+*.sqlite3
+
+# Dev enviroment
+.DS_Store
+.github/
+scratch/
+scratch.node_modules
+*.swp
+temp/
+tmp/
+
+# Node.js
+node_modules/
+package-lock.json
+
+# Other
 core.Microsoft*
 core.mongo*
 core.python*
+creds.json
+
+# Python
 env.py
+env
+.env
 __pycache__/
 *.py[cod]
-node_modules/
-.github/
+.venv/
+venv/
+
+# Testing
+.coverage
+htmlcov
+
+# VS Code
+.vscode/
+
 cloudinary_python.txt
