@@ -71,5 +71,38 @@ The members can post details of the books to be read, leave comments or suggest 
      
    - Wireframes
    
-   
-   
+    Desktop Wireframes:
+    
+    Homepage
+    https://share.balsamiq.com/c/aRtgea7mQak2fjD1P1sr7J.png
+    
+    Our Library
+    https://share.balsamiq.com/c/dxidnYK2irmfbXjMBsU2Vb.png
+    
+    About Us
+    https://share.balsamiq.com/c/2TyAPPqaLsE4Nwm8jQ9A6U.png
+    
+    Sign Up
+    https://share.balsamiq.com/c/f3ACVJPs1NUMpMJ7f6bafQ.png
+    
+    Sign In
+    https://share.balsamiq.com/c/4RdMLbp5hMZZS22Dv2N3Ld.png
+    
+    
+    Mobile Wireframes:
+    
+    Homepage
+    https://share.balsamiq.com/c/jLBGMQgDDTMnPWP2fPBbVD.png
+    
+    Our Library
+    https://share.balsamiq.com/c/7ymWom9wuYCcjkU5QQsRsG.png
+    
+    About Us
+    https://share.balsamiq.com/c/sK5jHPgRfqNaGDfp21Nwb2.png
+    
+    Sign Up
+    https://share.balsamiq.com/c/2qQWRrgxXAvPDrD5BgC1Mr.png
+    
+    Sign In
+    https://share.balsamiq.com/c/8edK8GMY3fpoKeFbjWNSHZ.png
+    
