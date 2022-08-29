@@ -108,4 +108,4 @@ The members can post details of the books to be read, leave comments or suggest 
     
   ### Django Modell ERD
   
-  ![](http://media/Blankdiagram.pdf)
+  ![](media/Blankdiagram.pdf)
