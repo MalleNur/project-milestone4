@@ -23,7 +23,7 @@ The members can post details of the books to be read, leave comments or suggest 
 ## User Experience Design
 ### User Stories
    ### Strategy Goals
-   - Make an website for BookCircle members where they can interact and meetup.
+   - Make an website for BookCircle members where they can interact and meet & greet.
    - The website can be read and navigated on both desktop and mobile devices.
    - The website has to permit organisers and members to verify and interact with the content through creating meetup information and post comments. 
    
@@ -35,13 +35,13 @@ The members can post details of the books to be read, leave comments or suggest 
    ### First Time Visitor Goals 
     As a first time user:
     - I want to be able to navugate the website without problems
-    - I want to easily find information about the BookCircle and its social meetups.
+    - I want to easily find information about the BookCircle and its social meet & greet.
     - I want to be able to register to become a member of the BookCircle.
     
    ### Returning Visior Goals
     As a returning visitor:
-    - I want to be able to see information about previous and next meetup.
-    - I want to be able to post comments about the meetup and book.
+    - I want to be able to see information about previous and next meet & greet.
+    - I want to be able to post comments about the meet & greet and book.
     - I want to be able to vote for "book of the month".
     
   ### Design
@@ -52,7 +52,7 @@ The members can post details of the books to be read, leave comments or suggest 
      
    - Content
      
-     The site admin will be in charge of creating the content as constructing books and meetup items. 
+     The site admin will be in charge of creating the content as constructing books and meet & greet items. 
      Details of the books will be displyed below the image on smaller screens and shift to the right of the image on larger screens.
      It will also be the same for the book list as well as the meetup book.
      There will be a default placeholder image shown in place of the user choosing a bookcover image.
@@ -67,7 +67,7 @@ The members can post details of the books to be read, leave comments or suggest 
      
    - Imagery
    
-     There is no background image needed for this project. BookCircle members have the ability to upload an image of a book cover to draw the user's attention to the meetup information. In the absence of a user-uploaded image, a default placeholder image of an untitled book cover is used. 
+     There is no background image needed for this project. BookCircle members have the ability to upload an image of a book cover to draw the user's attention to the meet & greet information. In the absence of a user-uploaded image, a default placeholder image of an untitled book cover is used. 
      
    - Wireframes
    
