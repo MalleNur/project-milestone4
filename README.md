@@ -106,3 +106,6 @@ The members can post details of the books to be read, leave comments or suggest 
     Sign In
     https://share.balsamiq.com/c/8edK8GMY3fpoKeFbjWNSHZ.png
     
+  ### Django Modell ERD
+  
+  ![](http://media/Blankdiagram.pdf)
