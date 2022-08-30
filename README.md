@@ -1,108 +1,111 @@
-# ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# The Book Circle Project
+## A community for book lovers to connect through an interactive social website. 
 
-Welcome MalleNur,
+You can view the live deployed app here.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## Table of Contents
+- Project Idea
+- User Experience Design (UX)
+- Features
+- Technologies
+- Testing
+- Deployment
+- Credits
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+## Project Idea
+This is the fourth Portfolio Project (PP4) for the Code Insitute's Full Stack Web Development course.
+The PP4 project idea will showcase my ability to design a web application by applying an MVX framework and related technologies. I have also deployed to Heruko as required. 
 
-## Gitpod Reminders
+This website is an interactive community for book lovers to either meetup or socialize throught the website to connect and discuss the books assigned for reading through popular vote.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+The members can post details of the books to be read, leave comments or suggest new books for the group to read and discuss. The members can also collectively choose which book that will be next on the reading list of suggested books.
 
-`python3 -m http.server`
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank"  README.md file at the official repo for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```bash
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
-------
-
-Happy coding!
+## User Experience Design
+### User Stories
+   ### Strategy Goals
+   - Make an website for BookCircle members where they can interact and meet & greet.
+   - The website can be read and navigated on both desktop and mobile devices.
+   - The website has to permit organisers and members to verify and interact with the content through creating meetup information and post comments. 
+   
+   ### Book Circle Organiser Goals 
+    As a admin:
+    - I want to be able to setup and manage the book list
+    - I want to be able to create and be in charge of the meetup information page.
+    
+   ### First Time Visitor Goals 
+    As a first time user:
+    - I want to be able to navugate the website without problems
+    - I want to easily find information about the BookCircle and its social meet & greet.
+    - I want to be able to register to become a member of the BookCircle.
+    
+   ### Returning Visior Goals
+    As a returning visitor:
+    - I want to be able to see information about previous and next meet & greet.
+    - I want to be able to post comments about the meet & greet and book.
+    - I want to be able to vote for "book of the month".
+    
+  ### Design
+  
+   - Layout
+     
+     The website has a simple layout where the user can see the logo and site navigation along with a top bar and simple footer on the bottom of the website. A Bootstrap board is used for content to be displayed as a styled section for the main page.
+     
+   - Content
+     
+     The site admin will be in charge of creating the content as constructing books and meet & greet items. 
+     Details of the books will be displyed below the image on smaller screens and shift to the right of the image on larger screens.
+     It will also be the same for the book list as well as the meetup book.
+     There will be a default placeholder image shown in place of the user choosing a bookcover image.
+     
+   - User Input
+   
+     Data is updated by using Bootstrap forms. For this project i am using either Bootstrap buttons or Fontawsome icons for all user interaction controls.
+     
+   - Typography
+   
+     The Google font Roboto was used for this project.
+     
+   - Imagery
+   
+     There is no background image needed for this project. BookCircle members have the ability to upload an image of a book cover to draw the user's attention to the meet & greet information. In the absence of a user-uploaded image, a default placeholder image of an untitled book cover is used. 
+     
+   - Wireframes
+   
+    Desktop Wireframes:
+    
+    Homepage
+    https://share.balsamiq.com/c/aRtgea7mQak2fjD1P1sr7J.png
+    
+    Our Library
+    https://share.balsamiq.com/c/dxidnYK2irmfbXjMBsU2Vb.png
+    
+    About Us
+    https://share.balsamiq.com/c/2TyAPPqaLsE4Nwm8jQ9A6U.png
+    
+    Sign Up
+    https://share.balsamiq.com/c/f3ACVJPs1NUMpMJ7f6bafQ.png
+    
+    Sign In
+    https://share.balsamiq.com/c/4RdMLbp5hMZZS22Dv2N3Ld.png
+    
+    
+    Mobile Wireframes:
+    
+    Homepage
+    https://share.balsamiq.com/c/jLBGMQgDDTMnPWP2fPBbVD.png
+    
+    Our Library
+    https://share.balsamiq.com/c/7ymWom9wuYCcjkU5QQsRsG.png
+    
+    About Us
+    https://share.balsamiq.com/c/sK5jHPgRfqNaGDfp21Nwb2.png
+    
+    Sign Up
+    https://share.balsamiq.com/c/2qQWRrgxXAvPDrD5BgC1Mr.png
+    
+    Sign In
+    https://share.balsamiq.com/c/8edK8GMY3fpoKeFbjWNSHZ.png
+    
+  ### Django Modell ERD
+  
+ [Blankdiagram.pdf](https://github.com/MalleNur/project-milestone4/files/9447060/Blankdiagram.pdf)
