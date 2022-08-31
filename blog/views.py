@@ -1,104 +1,192 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
-from django.contrib import messages
-
-from products.models import Product
-
-# Create your views here.
 
 
-def view_bag(request):
-    """ A view that renders the bag contents page """
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.shortcuts import render
+from django.urls import reverse_lazy
+from django.views import generic, View
 
-    return render(request, 'bag/bag.html')
+from .models import Meetup, Comments, Book
+from .forms import CommentForm
 
 
-def add_to_bag(request, item_id):
-    """ Add a quantity of the specified product to the shopping bag """
+##
+# CRUD Functions for club Meetup details
+#
+class MeetupList(generic.ListView):
+    '''
+    Displays list of all Meetups.
+    '''
+    model = Meetup
 
-    product = get_object_or_404(Product, pk=item_id)
-    quantity = int(request.POST.get('quantity'))
-    redirect_url = request.POST.get('redirect_url')
-    seize = None
-    if 'product_size' in request.POST:
-        seize = request.POST['product_size']
-    bag = request.session.get('bag', {})
 
-    if seize:
-        if item_id in list(bag.keys()):
-            if seize in bag[item_id]['items_by_seize'].keys():
-                bag[item_id]['items_by_seize'][seize] += quantity
-                messages.success(request, f'Updated size {seize.upper()} {product.name} quantity to {bag[item_id]["items_by_seize"][seize]}')
-            else:
-                bag[item_id]['items_by_seize'][seize] = quantity
-                messages.success(request, f'Added size {seize.upper()} {product.name} to your bag')
+class MeetupDetail(View):
+    '''
+    Displays details of selected Meetup.
+    Accepts New & displays associated User Comments.
+    '''
+    def get(self, request, pk, *args, **kwargs):
+        meetup = Meetup.objects.get(pk=pk)
+        comments = Comments.objects.filter(meetup=meetup.id).order_by('created_on')
+        return render(
+            request,
+            'blog/meetup_detail.html',
+            {
+                'meetup': meetup,
+                'comments': comments,
+                'comment_form': CommentForm()
+            },
+        )
+
+    def post(self, request, pk, *args, **kwargs):
+        meetup = Meetup.objects.get(pk=pk)
+        comments = Comments.objects.filter(meetup=meetup.id).order_by('created_on')
+
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            comment_form.instance.user = request.user
+            new_comment = comment_form.save(commit=False)
+            new_comment.meetup = meetup
+            new_comment.save()
         else:
-            bag[item_id] = {'items_by_seize': {seize: quantity}}
-            messages.success(request, f'Added size {seize.upper()} {product.name} to your bag')
-    else:
-        if item_id in list(bag.keys()):
-            bag[item_id] += quantity
-            messages.success(request, f'Updated {product.name} quantity to {bag[item_id]}')
-        else:
-            bag[item_id] = quantity
-            messages.success(request, f'Added {product.name} to your bag')
+            comment_form = CommentForm()
 
-    request.session['bag'] = bag
-    return redirect(redirect_url)
-
-
-def adjust_bag(request, item_id):
-    """Adjust the quantity of the specified product to the specified amount"""
-
-    product = get_object_or_404(Product, pk=item_id)
-    quantity = int(request.POST.get('quantity'))
-    seize = None
-    if 'product_size' in request.POST:
-        seize = request.POST['product_size']
-    bag = request.session.get('bag', {})
-
-    if seize:
-        if quantity > 0:
-            bag[item_id]['items_by_seize'][seize] = quantity
-            messages.success(request, f'Updated seize {seize.upper()} {product.name} quantity to {bag[item_id]["items_by_seize"][seize]}')
-        else:
-            del bag[item_id]['items_by_seize'][seize]
-            if not bag[item_id]['items_by_seize']:
-                bag.pop(item_id)
-            messages.success(request, f'Removed size {seize.upper()} {product.name} from your bag')
-    else:
-        if quantity > 0:
-            bag[item_id] = quantity
-            messages.success(request, f'Updated {product.name} quantity to {bag[item_id]}')
-        else:
-            bag.pop(item_id)
-            messages.success(request, f'Removed {product.name} from your bag')
-
-    request.session['bag'] = bag
-    return redirect(reverse('view_bag'))
+        return render(
+            request,
+            'blog/meetup_detail.html',
+            {
+                'meetup': meetup,
+                'comments': comments,
+                'comment_form': comment_form,
+            },
+        )
 
 
-def remove_from_bag(request, item_id):
-    """Remove the item from the shopping bag"""
+class CreateMeetup(LoginRequiredMixin, UserPassesTestMixin, generic.CreateView):
+    '''
+    Allows user to add a new Meetup record. Only a meetup organiser
+    can do this (orgainser has auth_user.is_staff bool set to True).
+    '''
+    model = Meetup
+    fields = [
+        'title',
+        'meetup_date',
+        'book1',
+        'details',
+    ]
 
-    try:
-        product = get_object_or_404(Product, pk=item_id)
-        seize = None
-        if 'product_size' in request.POST:
-            seize = request.POST['product_size']
-        bag = request.session.get('bag', {})
+    def test_func(self):
+        return self.request.user.is_staff
 
-        if seize:
-            del bag[item_id]['items_by_seize'][seize]
-            if not bag[item_id]['items_by_seize']:
-                bag.pop(item_id)
-            messages.success(request, f'Removed seize {seize.upper()} {product.name} from your bag')
-        else:
-            bag.pop(item_id)
-            messages.success(request, f'Removed {product.name} from your bag')
+    def form_valid(self, form):
+        # Update modified_by with the current user
+        form.instance.modified_by = self.request.user
+        return super().form_valid(form)
 
-        request.session['bag'] = bag
-        return HttpResponse(status=200)
 
-    except Exception as e:
-        messages.error(request, f'Error removing item: {e}')
-        return HttpResponse(status=500)
+class UpdateMeetup(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView):
+    '''
+    Allows user to modify an exsiting Meetup record. Only a meetup organiser
+    can do this (orgainser has auth_user.is_staff bool set to True).
+    '''
+    model = Meetup
+    fields = [
+        'title',
+        'meetup_date',
+        'book1',
+        'details',
+        'status',
+    ]
+
+    def test_func(self):
+        return self.request.user.is_staff
+
+    def form_valid(self, form):
+        # Update modified_by with the current user
+        form.instance.modified_by = self.request.user
+        return super().form_valid(form)
+
+
+class DeleteMeetup(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
+    '''
+    Allows user to delete a Meetup record. Only a meetup organiser
+    can do this (orgainser has auth_user.is_staff bool set to True).
+    '''
+    model = Meetup
+    success_url = '/'
+
+    def test_func(self):
+        return self.request.user.is_staff
+
+
+##
+# Delete a comment
+#
+class DeleteComment(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
+    '''
+    Allow user to delete comment. Remain on meetup_detail page.
+    User can delete comment only if they created it.
+    '''
+    model = Comments
+
+    def test_func(self):
+        comment = self.get_object()
+        return self.request.user == comment.user
+
+    def get_success_url(self):
+        # On successful comment delete, stay on same meetup page
+        meetup = self.object.meetup
+        return reverse_lazy('meetup_detail', kwargs={'pk': meetup.pk})
+
+
+##
+# CRUD Functions for Books
+#
+class CreateBook(LoginRequiredMixin, UserPassesTestMixin, generic.CreateView):
+    '''
+    Allow user to add a new Book record. Only a meetup organiser
+    can do this (orgainser has auth_user.is_staff bool set to True).
+    '''
+    model = Book
+    fields = '__all__'
+
+    def test_func(self):
+        return self.request.user.is_staff
+
+
+class BookList(generic.ListView):
+    '''
+    Display list of all Books.
+    '''
+    model = Book
+    ordering = ['title']
+
+
+class UpdateBook(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView):
+    '''
+    Allow user to modify an exsiting Book record.
+    Only a meetup organiser can do this.
+    '''
+    model = Book
+    fields = '__all__'
+
+    def test_func(self):
+        return self.request.user.is_staff
+
+
+class DeleteBook(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
+    '''
+    Allow user to delete a Book record.
+    Only a meetup organiser can do this.
+    '''
+    model = Book
+    success_url = '/library/'
+
+    def test_func(self):
+        return self.request.user.is_staff
+
+
+##
+# About Page
+#
+def about(request):
+    return render(request, 'blog/about.html')
