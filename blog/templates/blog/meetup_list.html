@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load static %}
+
+<!-- Nav Bar: add 'active' class to the nav-link -->
+{% block nav_home %}active{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+
+  <!-- banner-header -->
+  <div class="row justify-content-center">
+    <div class="card col-md-10 shadow">
+      <div class="card-body" >
+        <div class="row">
+
+        <div class="col-6 card-text"><h4>Book Circle Meet & Greet</h4></div>
+        <div class="col-6 card-text text-right">
+            <!-- If user is organiser show additional options-->
+            {% if request.user.is_staff  %}
+              <a href="{% url 'meetup-create' %}" class="btn-sm btn-info" >Add Meetup</a>
+            {% endif %}
+        </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- List the Meetup info in card style -->
+  <div class="row">
+    <div class="col-12 mt-3 left">
+      <div class="row">
+          {% for meetup in meetup_list %}
+          <div class="col-md-6">
+            <div class="card mb-4 card-max-h shadow">
+              <div class="card-body text-center"><h5>{{ meetup.title }}</h5></div>
+
+              <div class="image-container">
+                {% if "placeholder" in meetup.book1.cover_image.url %}
+                <img class="bookcover-img"
+                    src="{% static 'media/raven-black.png' %}" alt="bookcover image placeholder">
+                {% else %}
+                <img class="bookcover-img" src=" {{ meetup.book1.cover_image.url }}" alt="bookcover image">
+                {% endif %}
+              </div>
+              <!-- end image-container -->
+
+              <div class="card-body overflow-auto">
+                <p class="card-text">
+                  The book this month is <strong>{{ meetup.book1_detail.title }}</strong>
+                  by <strong>{{  meetup.book1_detail.author }}</strong></p>
+                <p class="card-text">{{ meetup.details }}</p>
+              </div>
+              
+              <div class="card-footer text-right">
+                <a href="{% url 'meetup_detail' meetup.pk %}" class="stretched-link">Read more >></a>
+              </div>
+            </div>
+            <!-- end card -->
+          </div>
+          <!-- end col -->
+          {% endfor %}
+
+      </div>
+      <!-- end inner row -->
+    </div>
+  </div>
+  <!-- end outer row -->
+</div>
+<!-- end container -->
+{% endblock content %}
