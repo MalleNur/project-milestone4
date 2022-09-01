@@ -1,1 +1,1 @@
-+ web: gunicorn bookclub.wsgi:application
++ web: gunicorn bookcircle.wsgi:application
