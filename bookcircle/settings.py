@@ -89,7 +89,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'bookclub.urls'
+ROOT_URLCONF = 'bookcircle.urls'
 
 TEMPLATES = [
     {
