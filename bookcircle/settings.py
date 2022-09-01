@@ -107,7 +107,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'bookclub.wsgi.application'
+WSGI_APPLICATION = 'bookcircle.wsgi.application'
 
 
 # Password validation
