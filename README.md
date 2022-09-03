@@ -13,8 +13,6 @@ You can view the live deployed app here.
 - Credits
 
 ## Project Idea
-This is the fourth Portfolio Project (PP4) for the Code Insitute's Full Stack Web Development course.
-The PP4 project idea will showcase my ability to design a web application by applying an MVX framework and related technologies. I have also deployed to Heruko as required. 
 
 This website is an interactive community for book lovers to either meetup or socialize throught the website to connect and discuss the books assigned for reading through popular vote.
 
