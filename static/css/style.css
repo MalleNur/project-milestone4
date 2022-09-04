@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Trocchi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,500;1,100;1,200;1,300;1,400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap');
 
 /* 
   Global styling
@@ -7,15 +6,10 @@
 
 :root {
   /* Initialise gloabl vars */
-  /* Sans-Serif font family fallbacks: Arial, Helvetica, sans-serif */
-  /* Serif font family fallbacks: Georgia, Times, serif */
 
-  --bg-colour: #eef4f4; /* sitewide background colour */
-  --text-colour: #000; /* sitewide text colour */
-  --logo-colour: #cc5500;
-  --text-font-family: 'Lato', Arial, Helvetica, sans-serif;
-  --logo-font-family: "Trocchi", serif;
-  --text-font-size: 1rem;
+  --text-font-family: 'Raleway', Arial, Helvetica, sans-serif;
+  --logo-font-family: "Roboto", serif;
+  
 }
 
 html {
@@ -24,10 +18,10 @@ html {
 }
 
 body {
-  background-color: var(--bg-colour) !important;
-  color: var(--text-colour);
+  background-color: #eff6cc !important;
+  color: #000;
   font-family: var(--text-font-family);
-  font-size: var(--text-font-size);
+  font-size: 1rem;
   margin-bottom: 50px !important;
 }
 
@@ -45,7 +39,7 @@ footer {
   font: var(--logo-font-family, Georgia, Times, serif) !important;
   font-size: x-large !important;
   font-weight: bold !important;
-  color:  var(--logo-colour);
+  color:  #586f1c;
 }
 
 
@@ -64,7 +58,7 @@ footer {
 }
 
 .header-banner {
-  background-color: antiquewhite;
+  background-color: rgb(220, 245, 185);
   display: flex;
   align-items: center;
 }
@@ -89,7 +83,7 @@ footer {
 
 /*** Book List/Library ************************************/
 .book-title {
-  color: var(--text-colour);
+  color: #000;
   text-decoration: none !important;
 }
 
