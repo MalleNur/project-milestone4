@@ -2,4 +2,3 @@
 {% autoescape off %}
 {% blocktrans %}Password Reset E-mail{% endblocktrans %}
 {% endautoescape %}
-Footer

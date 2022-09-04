@@ -13,7 +13,7 @@
       <div class="card-body" >
         <div class="row">
 
-        <div class="col-6 card-text"><h4>Book Circle Meet & Greet</h4></div>
+        <div class="col-6 card-text"><h4>Book Club Meetups</h4></div>
         <div class="col-6 card-text text-right">
             <!-- If user is organiser show additional options-->
             {% if request.user.is_staff  %}
@@ -38,7 +38,7 @@
               <div class="image-container">
                 {% if "placeholder" in meetup.book1.cover_image.url %}
                 <img class="bookcover-img"
-                    src="{% static 'media/raven-black.png' %}" alt="bookcover image placeholder">
+                    src="{% static 'media/penguin-book-cover.png' %}" alt="bookcover image placeholder">
                 {% else %}
                 <img class="bookcover-img" src=" {{ meetup.book1.cover_image.url }}" alt="bookcover image">
                 {% endif %}
