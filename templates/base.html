@@ -15,7 +15,7 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-  <title>bookcircle Meetup</title>
+  <title>Bookcircle Meetup</title>
 </head>
 <body>
   <header>
@@ -23,7 +23,7 @@
     <nav class="navbar navbar-expand-md navbar-light bg-light">
       <div class="container-fluid">
         <!-- Logo -->
-        <a class="navbar-brand" href="{% url 'blog-home' %}"><span class="logo">Book Club</span></a>
+        <a class="navbar-brand" href="{% url 'blog-home' %}"><span class="logo">BookCircle</span></a>
         
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navToggle" 
         aria-controls="navToggle" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,7 +37,7 @@
               <a class="nav-link {% block nav_home %}{% endblock%}" aria-current="page" href="{% url 'blog-home' %}">Meetups</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {% block nav_list %}{% endblock%}" href="{% url 'book-list' %}">Our Library</a>
+              <a class="nav-link {% block nav_list %}{% endblock%}" href="{% url 'book-list' %}">Previous Books</a>
             </li>
             <!-- menu item club bio/info -->
             <li class="nav-item">
@@ -51,7 +51,7 @@
             </li>
             {% else %}
             <li class="nav-item">
-              <a class="nav-link {% block nav_signup %}{% endblock%}" href="{% url 'account_signup' %}">Join the Club!</a>
+              <a class="nav-link {% block nav_signup %}{% endblock%}" href="{% url 'account_signup' %}">Join the Community!</a>
             </li>
             <li class="nav-item">
               <a class="nav-link {% block nav_login %}{% endblock%}" href="{% url 'account_login' %}">Login</a>
