@@ -14,6 +14,9 @@ You can view the live deployed app here.
 
 ## Project Idea
 
+This is the fourth Portfolio Project (PP4) for the Code Insitute's Full Stack Web Development course.
+The PP4 project idea will showcase my ability to design a web application by applying an MVX framework and related technologies. I have also deployed to Heruko as required.
+
 This website is an interactive community for book lovers to either meetup or socialize throught the website to connect and discuss the books assigned for reading through popular vote.
 
 The members can post details of the books to be read, leave comments or suggest new books for the group to read and discuss. The members can also collectively choose which book that will be next on the reading list of suggested books.
@@ -107,3 +110,86 @@ The members can post details of the books to be read, leave comments or suggest 
   ### Django Modell ERD
   
  [Blankdiagram.pdf](https://github.com/MalleNur/project-milestone4/files/9447060/Blankdiagram.pdf)
+ 
+ ## Features
+
+To have a functioning website the following features was needed to be inplemented to fulfil the sites needs:
+
+- Simple navigation menu is always visible at the top of the screen. The current page is indicated by the highlighted menu item. The Login/Logout item indicates to the visitor if they are currently logged in.
+- Meetup cards clearly announce the upcoming and past club events. Clicking anywhere in the card will take the user to the Meetup Details page.
+- Meetup Details page displays much more information about the month's book and the organiser's message.
+- Option to leave a comment is available to logged-in members on the Meetup Detail page which allows members to engage in discussions with other club members, discuss the books, etc. Members have option to delete their own comments. Note that when users are not logged in the 'Leave a comment' option is replaced with a 'Login to join the discussion' call-to-action.
+- System Messages notify the user upon login/logout
+
+### Future Features
+
+- Allow members to rate books by clicking a visual '5-stars' control
+- Automate closing the vote for next month's book and posting a message to the site
+- Automate generating posting the next month's meetup based on the third Tuesday of each month
+- Allow members to reply in-thread to individual comments to create conversations
+- Allow members to post their own book reviews
+
+## Technologies Used 
+
+Languages Used:
+
+Python 3.6+ with the Django web framework
+Frameworks, Libraries & Programs Used
+Git was used for version control and managed via the VSCode terminal to commit to Git and push to GitHub.
+GitHub was used to store the project's code after being pushed from Git
+Flake8 linter extension for VScode
+Heroku was used to deploy the app
+LucidChart was used to create the logic flowchart
+Bootstrap 4 front-end CSS toolkit
+Font Awesome 6 font and icon toolkit
+pgAdmin Postgres database GUI Tool used to generate the ERD
+
+## Testing
+All testing and code validation was 
+
+## Bugs
+
+1. TypeErrors where solved
+2. OperationalErrors where solved by migrations
+3. static assets where routed correctly by setting it up with cloudinary - as we have used ImageFields which are served from cloudinary
+4. Url patterns and templates where routed correctly
+5. packages were installed correctly
+
+## Deployment
+
+Requirements
+Python >=3.7, Django 3.2
+The following third party packages were installed using pip install <package_name> (listed below in order of installation). The full list of required dependencies, with version numbers, is in the requirements.txt file.
+python-dotenv
+Django
+gunicorn
+dj_database_url
+psycopg2
+dj3-cloudinary-storage
+django-allauth
+django-crispy-forms
+Heroku Procfile requires the following content
+web: gunicorn bookclub.wsgi:application
+Initial deployment on any platform requires the creation of an admin 'superuser' to allow the site owner access to the backend admin control panel. At the Zsh/Bash shell (aka terminal/cli/console/command prompt) run the following command:
+python3 manage.py createsuperuser
+
+
+## Heroku
+
+The Project repository (repo) is at https://github.com/MalleNur/
+
+Deployment of the site to Heroku was done as follows:
+
+Login to your Heroku account
+Create a New App
+(Important!) Select the 'Settings' tab first
+Select 'Add Buildpack' and select Python
+Add the database in the 'Resources' tab > Add-ons, select Heroku Postgres
+In 'Settings' click on 'Reveal Config Vars'
+Add any relevant config vars by entering the KEY/VALUE pair data, e.g. PORT & 8000. The required vars are shown in the .env_template file in the project repo
+Select the 'Deploy' tab
+For the Deplyoment Method select GitHub
+Connect to GitHub repo by entering YOUR-REPO-NAME, then Connect
+A message will confirm that your app was successfuly deployed
+Test that the site has successfully gone live by clicking on the 'View' button
+Your app can now be accessed via any browser at: https://YOUR-APP-NAME.herokuapp.com
