@@ -32,7 +32,7 @@ DEBUG = DEVELOPMENT
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 if DEVELOPMENT:
-    ALLOWED_HOSTS = [ 'localhost' ]
+    ALLOWED_HOSTS = [ 'localhost', 'project-milestone4.herokuapp.com' ]
 else:
     ALLOWED_HOSTS = ['project-milestone4.herokuapp.com']
 
