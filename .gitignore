@@ -21,9 +21,9 @@ core.python*
 creds.json
 
 # Python
-# env.py
-# env
-# .env
+env.py
+env
+.env
 __pycache__/
 *.py[cod]
 .venv/

@@ -148,7 +148,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [ BASE_DIR.joinpath('static'), ]
+STATICFILES_DIRS = [BASE_DIR.joinpath('static'), ]
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 STATIC_ROOT = BASE_DIR.joinpath('staticfiles')
 
@@ -175,6 +175,7 @@ MESSAGE_TAGS = {
         messages.WARNING: 'alert-warning',
         messages.ERROR: 'alert-danger',
 }
+CLOUDINARY_URL = 'cloudinary://451845612742333:bonOfLBia0xeRfmb47QqdysHrcs@bookcircle'
 
 django_heroku.settings(locals())
 
