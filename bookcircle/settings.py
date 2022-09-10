@@ -175,7 +175,6 @@ MESSAGE_TAGS = {
         messages.WARNING: 'alert-warning',
         messages.ERROR: 'alert-danger',
 }
-CLOUDINARY_URL = 'cloudinary://451845612742333:bonOfLBia0xeRfmb47QqdysHrcs@bookcircle'
 
 django_heroku.settings(locals())
 
