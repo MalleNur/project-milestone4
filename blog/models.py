@@ -9,7 +9,7 @@ class Book(models.Model):
 
     title = models.CharField(max_length=200, unique=True)
     author = models.CharField(max_length=60, unique=True)
-    year_published = models.CharField(max_length=4, blank=True)
+    year_published = models.DateField(blank=True, null=True)
     synopsis = models.TextField(blank=True)
     cover_image = CloudinaryField('image', default='placeholder')
     members_rating = models.PositiveSmallIntegerField(default=0)

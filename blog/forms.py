@@ -1,6 +1,7 @@
 from django import forms
 from .models import Book, Comments, Meetup
-
+class DateInput(forms.DateInput):
+    input_type = 'date'
 
 class BookForm(forms.ModelForm):
     '''
@@ -9,6 +10,9 @@ class BookForm(forms.ModelForm):
     class Meta:
         model = Book
         fields = '__all__'
+        widgets = {
+            "year_published": DateInput()
+        }
 
 
 class CommentForm(forms.ModelForm):
