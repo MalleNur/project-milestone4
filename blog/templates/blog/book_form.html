@@ -11,6 +11,7 @@
         <form enctype="multipart/form-data" method="POST" >
           {% csrf_token %}
           {{ form|crispy }}
+          
           <button class="btn-sm btn-info mb-2" type="submit">Save</button>
         </form>
       </div>

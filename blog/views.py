@@ -4,7 +4,7 @@ from django.urls import reverse_lazy
 from django.views import generic, View
 
 from .models import Meetup, Comments, Book
-from .forms import CommentForm
+from .forms import CommentForm, BookForm
 
 
 ##
@@ -145,7 +145,7 @@ class CreateBook(LoginRequiredMixin, UserPassesTestMixin, generic.CreateView):
     can do this (orgainser has auth_user.is_staff bool set to True).
     '''
     model = Book
-    fields = '__all__'
+    form_class = BookForm
 
     def test_func(self):
         return self.request.user.is_staff
