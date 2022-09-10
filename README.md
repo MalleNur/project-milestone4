@@ -1,7 +1,7 @@
 # The Book Circle Project
 ## A community for book lovers to connect through an interactive social website. 
 
-You can view the live deployed app here.
+You can view the live deployed app [here](https://project-milestone4.herokuapp.com/). 
 
 ## Table of Contents
 - Project Idea
@@ -115,11 +115,12 @@ The members can post details of the books to be read, leave comments or suggest 
 
 To have a functioning website the following features was needed to be inplemented to fulfil the sites needs:
 
-- Simple navigation menu is always visible at the top of the screen. The current page is indicated by the highlighted menu item. The Login/Logout item indicates to the visitor if they are currently logged in.
-- Meetup cards clearly announce the upcoming and past club events. Clicking anywhere in the card will take the user to the Meetup Details page.
-- Meetup Details page displays much more information about the month's book and the organiser's message.
-- Option to leave a comment is available to logged-in members on the Meetup Detail page which allows members to engage in discussions with other club members, discuss the books, etc. Members have option to delete their own comments. Note that when users are not logged in the 'Leave a comment' option is replaced with a 'Login to join the discussion' call-to-action.
-- System Messages notify the user upon login/logout
+- <strong>Simple navigation menu</strong> is always visible at the top of the screen. The user can see the previous books, meet up, sign in and Login/Logout that is clearly highlighted on the menu navigation bar. 
+- <strong>Meetup cards</strong> tells the user of the upcoming and past bookcircle events. The user only needs to click on the card to be taken to the Meetup Details page.
+- <strong>Meetup Details page</strong> displays much more information about the month's book and the organiser's message.
+- <strong>Option to leave a comment</strong> is for the logged in memebers and the administrator thats in charge of the website. The memebers will be able to to comment and start/engage in discussions with other bookcircle members about the books etc. Members have option to delete their own comments. 
+Note that when users are not logged in the 'Leave a comment' option is replaced with a 'Login to join the discussion' call-to-action.
+- <strong>System Messages</strong> notify the user upon login/logout
 
 ### Future Features
 
@@ -131,21 +132,22 @@ To have a functioning website the following features was needed to be inplemente
 
 ## Technologies Used 
 
-Languages Used:
+### Languages Used:
 
 Python 3.6+ with the Django web framework
-Frameworks, Libraries & Programs Used
-Git was used for version control and managed via the VSCode terminal to commit to Git and push to GitHub.
-GitHub was used to store the project's code after being pushed from Git
-Flake8 linter extension for VScode
-Heroku was used to deploy the app
-LucidChart was used to create the logic flowchart
-Bootstrap 4 front-end CSS toolkit
-Font Awesome 6 font and icon toolkit
-pgAdmin Postgres database GUI Tool used to generate the ERD
+
+### Frameworks, Libraries & Programs Used
+1. <stong>Git</strong> was used for version control and managed via the VSCode terminal to commit to Git and push to GitHub.
+2. <strong>GitHub</strong> was used to store the project's code after being pushed from Git
+3. <strong>Flake8</strong> linter extension for VScode
+4. <strong>Heroku</strong> was used to deploy the app
+5. <strong>LucidChart</strong> was used to create the logic flowchart
+6. <strong>Bootstrap 4</strong> front-end CSS toolkit
+7. <strong>Font Awesome 6</strong> font and icon toolkit
+8. <strong>pgAdmin</strong> Postgres database GUI Tool used to generate the ERD
 
 ## Testing
-All testing and code validation was 
+All testing and code validation is in the readme-documents in the repositry. 
 
 ## Bugs
 
@@ -157,9 +159,11 @@ All testing and code validation was
 
 ## Deployment
 
-Requirements
-Python >=3.7, Django 3.2
-The following third party packages were installed using pip install <package_name> (listed below in order of installation). The full list of required dependencies, with version numbers, is in the requirements.txt file.
+### Requirements
+
+- Python >=3.7, Django 3.2
+- The following third party packages were installed using pip install <package_name> (listed below in order of installation). The full list of required dependencies, with version numbers, is in the requirements.txt file. 
+
 python-dotenv
 Django
 gunicorn
@@ -168,28 +172,41 @@ psycopg2
 dj3-cloudinary-storage
 django-allauth
 django-crispy-forms
-Heroku Procfile requires the following content
-web: gunicorn bookclub.wsgi:application
-Initial deployment on any platform requires the creation of an admin 'superuser' to allow the site owner access to the backend admin control panel. At the Zsh/Bash shell (aka terminal/cli/console/command prompt) run the following command:
+
+- Heroku Procfile requires the following content:
+
+web: gunicorn bookcircle.wsgi:application
+
+- Initial deployment on any platform requires the creation of an admin 'superuser' to allow the site owner access to the backend admin control panel. At the Zsh/Bash shell (aka terminal/cli/console/command prompt) run the following command:
+
 python3 manage.py createsuperuser
+or
+<strong>python manage.py runserver and open port 8000 in browser.</strong>
 
 
 ## Heroku
+
+[Click here to see the website](https://project-milestone4.herokuapp.com/)
 
 The Project repository (repo) is at https://github.com/MalleNur/
 
 Deployment of the site to Heroku was done as follows:
 
-Login to your Heroku account
-Create a New App
-(Important!) Select the 'Settings' tab first
-Select 'Add Buildpack' and select Python
-Add the database in the 'Resources' tab > Add-ons, select Heroku Postgres
-In 'Settings' click on 'Reveal Config Vars'
-Add any relevant config vars by entering the KEY/VALUE pair data, e.g. PORT & 8000. The required vars are shown in the .env_template file in the project repo
-Select the 'Deploy' tab
-For the Deplyoment Method select GitHub
-Connect to GitHub repo by entering YOUR-REPO-NAME, then Connect
-A message will confirm that your app was successfuly deployed
-Test that the site has successfully gone live by clicking on the 'View' button
-Your app can now be accessed via any browser at: https://YOUR-APP-NAME.herokuapp.com
+1. Login to your Heroku account
+2. Create a New App
+3. (Important!) Select the 'Settings' tab first
+4. Select 'Add Buildpack' and select Python
+5. Add the database in the 'Resources' tab > Add-ons, select Heroku Postgres
+6. In 'Settings' click on 'Reveal Config Vars'
+7. Add any relevant config vars by entering the KEY/VALUE pair data, e.g. PORT & 8000. The required vars are shown in the .env_template file in the project repo
+8. Select the 'Deploy' tab
+9. For the Deplyoment Method select GitHub
+10. Connect to GitHub repo by entering YOUR-REPO-NAME, then Connect
+11. A message will confirm that your app was successfuly deployed
+12. Test that the site has successfully gone live by clicking on the 'View' button
+13. Your app can now be accessed via any browser at: https://YOUR-APP-NAME.herokuapp.com
+
+## Acknowledgements
+
+- My mentor Narender Singh that have helped me with this project. Thaks alot!
+- The Code Institute Community on Slack and the CI staff and students for their feedback and support. 
