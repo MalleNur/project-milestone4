@@ -1,7 +1,7 @@
 # The Book Circle Project
 ## A community for book lovers to connect through an interactive social website. 
 
-You can view the live deployed app here.
+You can view the live deployed app [here](https://project-milestone4.herokuapp.com/). 
 
 ## Table of Contents
 - Project Idea
@@ -93,7 +93,7 @@ The members can post details of the books to be read, leave comments or suggest 
     Mobile Wireframes:
     
     Homepage
-    ![](readme-documents/Wireframe1mobile.png)
+    https://share.balsamiq.com/c/jLBGMQgDDTMnPWP2fPBbVD.png
     
     Our Library
     https://share.balsamiq.com/c/7ymWom9wuYCcjkU5QQsRsG.png
@@ -185,6 +185,8 @@ or
 
 
 ## Heroku
+
+[Click here to see the website](https://project-milestone4.herokuapp.com/)
 
 The Project repository (repo) is at https://github.com/MalleNur/
 
