@@ -34,7 +34,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 if DEVELOPMENT:
     ALLOWED_HOSTS = [ 'localhost' ]
 else:
-    ALLOWED_HOSTS = [ os.environ.get('ALLOWED_HOSTS') ]
+    ALLOWED_HOSTS = ['project-milestone4.herokuapp.com']
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
